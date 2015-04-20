@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <!-- <meta charset="utf-8"> -->
+  
+<!--   <link rel="stylesheet" type="text/css" media="all" href="text.css"> -->
+
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+  <script type="text/javascript">
+   $(function() {
+    $( "#mobile" ).draggable();
+  });
+
+    </script>
+
+    <style>
+
+    #mobile {
+background-color: lavender;
+  height: 3em;
+  width:10em;
+  
+
+}
+
+
+#start {
+  background-color: lavender;
+  height: 3em;
+  width:10em;
+}
+
+#drag {
+  background-color: lavender;
+  height: 3em;
+  width:10em;
+}
+
+#stop {
+  background-color: lavender;
+  height: 3em;
+  width:10em;
+}
+
+    </style>
+  -->
+
+ 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+
+
+<meta charset="utf-8">
+
+
+
+<title> home ttest </title>
+
+<link rel="stylesheet" type="text/css" href="text.css">
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+               
+
+   $(function() {
+    var $start_counter = $( "#start" ),
+      $drag_counter = $( "#drag" ),
+      $stop_counter = $( "#stop" ),
+      counts = [ 0, 0, 0 ];
+
+     
+ 
+    $( "#mobile" ).draggable({
+      start: function() {
+        counts[ 0 ]++;
+        updateCounterStatus( $start_counter, counts[ 0 ] );
+      },
+      drag: function() {
+        counts[ 1 ]++;
+        updateCounterStatus( $drag_counter, counts[ 1 ] );
+      },
+      stop: function() {
+        counts[ 2 ]++;
+        updateCounterStatus( $stop_counter, counts[ 2 ] );
+      }
+    });
+ 
+    function updateCounterStatus( $event_counter, new_count ) {
+    // first update the status visually...
+      if ( !$event_counter.hasClass( "ui-state-hover" ) ) {
+        $event_counter.addClass( "ui-state-hover" )
+          .siblings().removeClass( "ui-state-hover" );
+      }
+      // ...then update the numbers
+      var hex_count = ( new_count ).toString(16)
+
+
+      $( "span.count", $event_counter ).text( hex_count );
+      $(".mobile").css('background-color', hex_count);
+    }
+  });
+  
+});
+</script>
+
+  
+
+
+  
+
+
+</head>
+
+
+
+
+<body>
+
+  <div id="mobile"> </div>
+  
+
+  <div id="start" class="default"> <span> r_ </span> <span class="count">0</span> </div>
+  
+
+  <div id="drag" class="default"> <span> g_ </span> <span class="count">0</span> </div>
+  
+
+  <div id="stop" class="default"> <span> b_ </span> <span class="count">0</span> </div>
+  
+
+
+
+
+        
+        
+      
+      
+     
+          
+          
+          
+          
+          
+
+</body>
+</html>

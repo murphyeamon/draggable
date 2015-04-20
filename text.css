@@ -1,0 +1,32 @@
+#mobile {
+background-color: lavender;
+
+  height: 3em;
+  width:10em;
+  border: 3px red;
+  
+
+
+}
+
+
+#start {
+  background-color: 0;
+  height: 3em;
+  width:10em;
+  border: 1px, black;
+}
+
+#drag {
+  background-color: 0;
+  height: 3em;
+  width:10em;
+  border: 1px, black;
+}
+
+#stop {
+  background-color: 0;
+  height: 3em;
+  width:10em;
+  border: 1px, black;
+}
